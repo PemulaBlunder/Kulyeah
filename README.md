@@ -47,7 +47,7 @@ for y in colomnya:
     print(fDari kolom {y} nilai uniquenya,(len(data[y].unique())))
     print(fDari kolom {y} tipe nilai nya,(data[y].dtypes),\n)
 ```
-Disini saya menggabungkan mencari total nilai unik, mencari total duplikat, dan mencari total NaN. Dengan menggunakan looping saya dapat melakukan beberapa hal sekaligus.
+Disini saya menggabungkan mencari total nilai unik, mencari total duplikat, dan mencari total NaN. Menggunakan `len(data[y].unique()))` untuk mencari nilai unik, dengan menggunakan looping saya dapat melakukan beberapa hal sekaligus.
 
 ![image](https://github.com/user-attachments/assets/70cae662-2bec-4756-9ac8-cab32c4be581)
 
@@ -118,7 +118,7 @@ Sebuah legenda ditambahkan untuk membedakan antara "Duplicated Values" dan "Uniq
 
 ![image](https://github.com/user-attachments/assets/3383eb0a-d031-4e78-b4d4-74fb57e21ef0)
 
-##5. Menemukan Null Values
+## 5. Menemukan Null Values
 Kita telah menemukan Null Values di soal nomor 3 tadi
 ```py
 colomnya=data.columns.to_list()
@@ -128,6 +128,61 @@ for y in colomnya:
     print(fDari kolom {y} nilai uniquenya,(len(data[y].unique())))
     print(fDari kolom {y} tipe nilai nya,(data[y].dtypes),\n)
 ```
+Disini saya menggabungkan mencari total nilai unik, mencari total duplikat, dan mencari total NaN. Menggunakan `data[y].isnull().sum())` untuk mencari nilai NaN, dengan menggunakan looping saya dapat melakukan beberapa hal sekaligus.
+
+## 6. Mengganti Null Values
+Karena tidak ada nilai NaN di data saya maka lanjut ke pertanyaan selanjutnya
+
+## 7. Mengetahui jenis data dari dataset untuk mempermudah proses
+```py
+data.info()
+```
+Setelah anda run kode tersebut akan keluar informasi dari dataframe yang kita read, termasuk tipe value dari masing-masing kolom.
+
+## 8. Memfilter Data
+```py
+data_japan=data[data['Origin']=='Japan']
+data_japan.reset_index(drop=True,inplace=True)
+display(data_japan.head())
+
+data_us=data[data['Origin']=='US']
+data_us.reset_index(drop=True,inplace=True)
+display(data_us.head())
+
+data_europe=data[data['Origin']=='Europe']
+data_europe.reset_index(drop=True,inplace=True)
+display(data_europe.head())
+```
+Kita melakukan filtering dengan menggunakan `data[data['Origin']=='Japan']` yang akan menampilkan hanya nilai di `data['Origin']` yang berisi `Japan`, dan begitupun untuk 2 Origin yang lainnya
+
+![image](https://github.com/user-attachments/assets/01c87a11-d5c1-4006-9f98-33f5b27a2764)
+
+## 9. Membuat Box Plot
+```py
+plt.figure(figsize=(10, 6))
+plt.boxplot(data['MPG'], vert=False)
+plt.title('Box Plot of MPG')
+plt.xlabel('MPG')
+plt.grid()
+plt.show()
+```
+`plt.figure()` untuk membuat plot kosong dan `figsize=(10, 6)` untuk mengubah ukuran plot menjadi 10*6. `plt.boxplot(data['MPG'], vert=False)` untuk membuat box plot horizontal dengan value dari `data['MPG
+']`
+
+## 10. Korelasi
+```py
+plt.figure(figsize=(12, 8))
+corr_matrix = data.select_dtypes("number").corr()
+sns.heatmap(corr_matrix, annot=True, cmap="coolwarm")
+plt.title("Heatmap of Correlation Matrix")
+plt.show()
+```
+`plt.figure()` untuk membuat plot kosong dan `figsize=(12, 8)` untuk mengubah ukuran plot menjadi 12*8. `corr_matrix = data.select_dtypes("number").corr()` `data.select_dtypes("number")` Memilih kolom-kolom dalam DataFrame data yang memiliki tipe data numerik (misalnya, integer atau float). Ini penting karena hanya variabel numerik yang dapat dihitung korelasinya. `.corr()` Menghitung matriks korelasi untuk kolom-kolom numerik yang dipilih. Matriks korelasi menunjukkan hubungan linier antara setiap pasangan variabel numerik, dengan nilai berkisar antara -1 (korelasi negatif sempurna) hingga 1 (korelasi positif sempurna).
+
+`sns.heatmap(corr_matrix, ...)` Menggunakan fungsi heatmap dari pustaka Seaborn untuk menggambar heatmap berdasarkan matriks korelasi yang telah dihitung. `annot=True` Menambahkan anotasi (nilai korelasi) ke setiap sel di heatmap. Ini membuatnya lebih mudah untuk membaca nilai korelasi langsung dari grafik. `cmap="coolwarm"` Menentukan skema warna untuk heatmap. coolwarm memberikan gradien warna dari biru (korelasi negatif) ke merah (korelasi positif), membantu visualisasi hubungan antara variabel.
+
+
+
 
 
 
