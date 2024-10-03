@@ -6,11 +6,10 @@
 4. Visualisasi Nilai Unik  
 5. Menemukan Nilai Null  
 6. Mengganti Nilai Null (Jika Ditemukan)  
-7. Mengganti Nilai Null (Jika Ditemukan)  
-8. Mengetahui jenis data dari dataset untuk mempermudah proses  
-9. Memfilter Data  
-10. Membuat Box Plot  
-11. Korelasi  
+7. Mengetahui jenis data dari dataset untuk mempermudah proses  
+8. Memfilter Data  
+9. Membuat Box Plot  
+10. Korelasi  
 
 ## 1. Memuat Data
 ```py
@@ -116,3 +115,19 @@ Loop lain iterasi melalui `range_of_mpg`, menambahkan batang untuk setiap datase
 Sumbu diberi label, dan judul ditetapkan menggunakan `ax.set()`. X-ticks diposisikan untuk memusatkan batang yang dikelompokkan dan diberi label dengan kategori.
 Sebuah legenda ditambahkan untuk membedakan antara "Duplicated Values" dan "Unique Values." 
 `plt.tight_layout()` dipanggil untuk menyesuaikan jarak grafik agar lebih mudah dibaca.
+
+![image](https://github.com/user-attachments/assets/3383eb0a-d031-4e78-b4d4-74fb57e21ef0)
+
+##5. Menemukan Null Values
+Kita telah menemukan Null Values di soal nomor 3 tadi
+```py
+colomnya=data.columns.to_list()
+for y in colomnya:
+    print(fDari kolom {y} nilai duplikatnya,(data[y].duplicated().sum()))
+    print(fDari kolom {y} nilai NaN nya,(data[y].isnull().sum()))
+    print(fDari kolom {y} nilai uniquenya,(len(data[y].unique())))
+    print(fDari kolom {y} tipe nilai nya,(data[y].dtypes),\n)
+```
+
+
+
