@@ -130,6 +130,8 @@ for y in colomnya:
 ```
 Disini saya menggabungkan mencari total nilai unik, mencari total duplikat, dan mencari total NaN. Menggunakan `data[y].isnull().sum())` untuk mencari nilai NaN, dengan menggunakan looping saya dapat melakukan beberapa hal sekaligus.
 
+![image](https://github.com/user-attachments/assets/70cae662-2bec-4756-9ac8-cab32c4be581)
+
 ## 6. Mengganti Null Values
 Karena tidak ada nilai NaN di data saya maka lanjut ke pertanyaan selanjutnya
 
@@ -138,6 +140,8 @@ Karena tidak ada nilai NaN di data saya maka lanjut ke pertanyaan selanjutnya
 data.info()
 ```
 Setelah anda run kode tersebut akan keluar informasi dari dataframe yang kita read, termasuk tipe value dari masing-masing kolom.
+
+![image](https://github.com/user-attachments/assets/0889156f-9d51-424e-ab38-4141ff8d59bc)
 
 ## 8. Memfilter Data
 ```py
@@ -169,6 +173,9 @@ plt.show()
 `plt.figure()` untuk membuat plot kosong dan `figsize=(10, 6)` untuk mengubah ukuran plot menjadi 10*6. `plt.boxplot(data['MPG'], vert=False)` untuk membuat box plot horizontal dengan value dari `data['MPG
 ']`
 
+![image](https://github.com/user-attachments/assets/53fc7235-9bbb-4bec-ab93-e584e33d9e88)
+
+
 ## 10. Korelasi
 ```py
 plt.figure(figsize=(12, 8))
@@ -180,6 +187,9 @@ plt.show()
 `plt.figure()` untuk membuat plot kosong dan `figsize=(12, 8)` untuk mengubah ukuran plot menjadi 12*8. `corr_matrix = data.select_dtypes("number").corr()` `data.select_dtypes("number")` Memilih kolom-kolom dalam DataFrame data yang memiliki tipe data numerik (misalnya, integer atau float). Ini penting karena hanya variabel numerik yang dapat dihitung korelasinya. `.corr()` Menghitung matriks korelasi untuk kolom-kolom numerik yang dipilih. Matriks korelasi menunjukkan hubungan linier antara setiap pasangan variabel numerik, dengan nilai berkisar antara -1 (korelasi negatif sempurna) hingga 1 (korelasi positif sempurna).
 
 `sns.heatmap(corr_matrix, ...)` Menggunakan fungsi heatmap dari pustaka Seaborn untuk menggambar heatmap berdasarkan matriks korelasi yang telah dihitung. `annot=True` Menambahkan anotasi (nilai korelasi) ke setiap sel di heatmap. Ini membuatnya lebih mudah untuk membaca nilai korelasi langsung dari grafik. `cmap="coolwarm"` Menentukan skema warna untuk heatmap. coolwarm memberikan gradien warna dari biru (korelasi negatif) ke merah (korelasi positif), membantu visualisasi hubungan antara variabel.
+
+![image](https://github.com/user-attachments/assets/91be76af-534e-43b0-b7b3-f1eb6245c1df)
+
 
 
 
