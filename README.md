@@ -74,6 +74,7 @@ df_for_tes.index=group
 df_for_tes
 ```
 Setelah itu kita gunakan nilai duplikat dan unik yang telah disimpan menjadi dataframe dengan kolom `Duplicate` dan nilai dari `dulpicated`, kolom `Unique` dan nilai dari `unique_val`, dan menggunakan nilai dari `group` sebagai index sehingga menjadi:
+
 ![image](https://github.com/user-attachments/assets/eb0c9bff-cd6a-46ff-b019-0669d829ff2a)
 
 Gambar diatas adalah hasil dari kode pembuatan dataframe
