@@ -4,16 +4,23 @@
 2. Eksplorasi Data, sajikan data yang mungkin dalam beragam diagram chart
 3. Lakukan Uji Korelasi
    
-## 1. Memuat Data
+## Import Library dan Memuat Data
 ```py
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+from scipy import stats
+from scipy.stats import pearsonr
 
-data=pd.read_csv(C:\\Users\\Iyan\\Downloads\\old_cars.csv)
+data=pd.read_csv('C:\\Users\\Iyan\\Downloads\\old_cars.csv')
 data
 ```
+- Library Pandas digunakan untuk memuat dataframe
+- Library Numpy digunakan untuk fungsi matematis
+- Library Matplotlib digunakan untuk visualisasi
+- Library Seaborn digunakan untuk visualisasi juga
+
 Untuk menemukan direktori file kita dapat men-select file tersebut dan akan ada simbol ... kemudian kita pilih yang copy path.
 
 ![image](https://github.com/user-attachments/assets/c42fb41f-1b09-4ec0-96da-f770362571a7)
@@ -22,164 +29,136 @@ Setelah anda memanggil data seharusnya akan mengeluarkan output seperti ini.
 
 ![image](https://github.com/user-attachments/assets/ab3cc885-0fc8-4746-af24-f0b76200cd8f)
 
-## 2. Informasi dasar
+## 1. Summary Statistic Data
 ```py
-data.info()
+print(f"Data tersebut memeiliki frekuensi sebanyak {len(data)}\n")
+kolom=data.columns.to_list()
+for y in kolom:
+    if data[y].dtype == 'O':
+        continue
+    print(f'Dari kolom {y} nilai mean (rata-rata)',(data[y].mean()))
+    print(f'Dari kolom {y} nilai median nya',(data[y].median()))
+    print(f'Dari kolom {y} nilai modus nya',(data[y].mode()[0]))
+    print(f'Dari kolom {y} nilai varians nya',(data[y].std(ddof=1)))
+    print(f'Dari kolom {y} nilai standar deviasi nya',(data[y].var(ddof=1)),'\n')
 ```
-Setelah anda run kode tersebut akan keluar informasi dari dataframe yang kita read.
+Setelah anda run kode tersebut output akan mengeluarkan
 
-![image](https://github.com/user-attachments/assets/0889156f-9d51-424e-ab38-4141ff8d59bc)
+![image](https://github.com/user-attachments/assets/2982361c-0d05-40af-ba07-09e42dc660dc)
 
-## 3. Duplikat atau Nilai Unik
-Setelah kita mengetahui informasi-informasi dari data kita kita dapat mencari nilai duplikat.
+Sebelum melakukan looping kita pisahkan terlebih dahulu kolom yang tipenya `'Object'` karena kolom tersebut tidak memiliki mean, standar deviasi, dan lain-lain. Dengan menggunakan looping kita dapat mengeluarkan nilai yang dicari dari semua kolom yang ada di data secara berurutan
+
+## 2. Eksplorasi Data
+Setelah kita mengetahui informasi statistika deskriptifnya kita sekarang dapat mencari nilai outlier, cara mencari outlier terdapat dua cara yaitu:
+
+### Z Score
+Jika kita menggunakan Z Score, Z Score sedikit kurang kebal dengan outlier, dengan arti karena Z Score didapatkan dengan menggunakan standar deviasi dan rata-rata yang dimana outlier tersebut juga ikut serta untuk menghasilkan Z Score.
 ```py
-colomnya=data.columns.to_list()
-for y in colomnya:
-    print(fDari kolom {y} nilai duplikatnya,(data[y].duplicated().sum()))
-    print(fDari kolom {y} nilai NaN nya,(data[y].isnull().sum()))
-    print(fDari kolom {y} nilai uniquenya,(len(data[y].unique())))
-    print(fDari kolom {y} tipe nilai nya,(data[y].dtypes),\n)
+for i in kolom:
+    if data[i].dtype == 'O':
+        continue
+    data[f'z_score {i}'] = stats.zscore(data[i])
+    outliers_zscore = data[data[f'z_score {i}'].abs() > 3]
+    display(f'Outlier z-score dari {i}',outliers_zscore)
 ```
-Disini saya menggabungkan mencari total nilai unik, mencari total duplikat, dan mencari total NaN. Menggunakan `len(data[y].unique()))` untuk mencari nilai unik, dengan menggunakan looping saya dapat melakukan beberapa hal sekaligus.
+Sama seperti sebelumnya kita melakukan looping untuk memisahkan terlebih dahulu kolom yang tipenya `'Object'`. Kode tersebut menggunakan fungsi yang telah ada di library scipy `stats.zscore()`
 
-![image](https://github.com/user-attachments/assets/70cae662-2bec-4756-9ac8-cab32c4be581)
+![image](https://github.com/user-attachments/assets/1d26d61b-5d2f-4b12-8707-8a4fb267e97d)
 
-Gambar diatas adalah output dari mencari total nilai unik, mencari total duplikat, dan mencari total NaN. Dengan menggunakan looping
+Output yang digunakan seperti digambar tersebut dan dari keelima kolom yang dilakukan pengecekan Z Score hanya kolom Horsepower yang memiliki outlier berjumlah 4 outlier
 
-## 4. Visualisasi Duplikat
-
-Setelah kita mengetahui bahwa di data kita terdapat value duplikat kita dapat memvisualisasikannya.
+### IQR
+Sedangkan jika kita menggunakan IQR, IQR sedikit lebih tahan dengan outlier daripada Z Score dikarenakan tidak menggunakan outlier untuk mencari nilai IQR
 ```py
-group=data.columns.to_list()
-duplicated=[]
-unique_val=[]
-
-for i in group:
-    simpan_angka=0
-    simpan_angka+=(len(data[i].unique()))
-    unique_val.append(simpan_angka)
-    duplicated.append(len(data)-simpan_angka)
+for i in kolom:
+    if data[i].dtype == 'O':
+        continue
+    Q1 = data[i].quantile(0.25)
+    Q3 = data[i].quantile(0.75)
+    IQR = Q3 - Q1
+    
+    lower_bound = Q1 - 1.5 * IQR
+    upper_bound = Q3 + 1.5 * IQR
+    outliers_iqr = data[(data[i] < lower_bound) | (data[i] > upper_bound)]
+    print(f'Lower bound {lower_bound} dan upper bound {upper_bound} di kolom {i}')
+    display(f'Outlier dengan iqr di kolom {i}',outliers_iqr)
 ```
-Sebelum kita visualisasikan kita mencari berapa total duplicate dan nilai unik tiap kolom, menggunakan `len(data[i].unique())` untuk mendapatkan jumlah data yang unique dan kemudian di simpan di dalam list kosong yang telah di-inisialisasi, dan begitupun untuk nilai duplikat. 
+Sama seperti sebelum-sebelumnya lagi kita melakukan looping untuk memisahkan terlebih dahulu kolom yang tipenya `'Object'`. Kode tersebut menggunakan beberapa fungsi yang sudah ada didalam library pandas seperti `.quantile()` yang dimana digunakan untuk mencari quartil dari data tersebut, kemudian dari hasil quartil 3 dan quartil 1 kita kurangkan dan akan mendapatkan nilai IQR. Setelah kita mendapatkan nilai IQR kita dapat menetapkan `lower_bound`, dan `upper_bound`
+
+![image](https://github.com/user-attachments/assets/9ec7cbb3-037b-41ed-b199-2a2e4df847fe)
+
+Gambar diatas adalah output dari mencari outlier dengan menggunakan IQR nah disini terlihat mengapa IQR lebih tahan terhadap outlier karena dari 5 kolom terdapat 2 kolom yang teredeteksi outlier yaitu kolom horsepower(seperti z score) dan MPG
+
+### Handling Outlier
+Disini saya tidak melakukan handling outlier dikarenakan data tersebut adalah data mobil yang dalam stok di dealer, dan data di kolom MPG dibutuhkan sebagai spesifikasi mobil tersebut seperti apakah mobili ini hemat bahan bakar atau tidak?, lalu untuk kolom horsepower digunakan juga untuk spesifikasi mobil seperti contoh beberapa orang mencari mobil dengan horsepower tinggi. Dan setelah saya crosscheck kembali mobil yang tertera memang berspesifikasi sesuai dengan data
+
+### Visualisasi
 ```py
-df_for_tes=pd.DataFrame({Duplicate:duplicated,Unique:unique_val})
-df_for_tes.index=group
-df_for_tes
-```
-Setelah itu kita gunakan nilai duplikat dan unik yang telah disimpan menjadi dataframe dengan kolom `Duplicate` dan nilai dari `dulpicated`, kolom `Unique` dan nilai dari `unique_val`, dan menggunakan nilai dari `group` sebagai index sehingga menjadi:
+kolom_numerik=[]
+for i in kolom:
+    if data[i].dtype == 'O':
+        continue
+    kolom_numerik.append(i)
 
-![image](https://github.com/user-attachments/assets/eb0c9bff-cd6a-46ff-b019-0669d829ff2a)
+fig,ax=plt.subplots(nrows=1,ncols=5,figsize=(15,8))
 
-Gambar diatas adalah hasil dari kode pembuatan dataframe
-```py
-category=df_for_tes.index.to_list()
-range_of_mpg=df_for_tes.columns.to_list()
-for_chart=[]
-colors=[#7c6987,#fd8c23]
-for i in range_of_mpg:
-    for_chart.append(df_for_tes[i])
-
-width_bar=0.3
-index=np.arange(len(category))
-
-fig,ax=plt.subplots(figsize=(12,8))
-
-for i in range(len(range_of_mpg)):
-    ax.bar(index+i*width_bar, list(for_chart[i]), width_bar, label=f"{range_of_mpg[i]}", color=colors[i])
-
-ax.set(xlabel=Columns,ylabel=Jumlah Data,title=Distribusi Duplicate, dan Unique
-       ,xticks=index + width_bar * (len(range_of_mpg) - 1) / 2,xticklabels=category)
-
-ax.legend()
+for i,var in enumerate(kolom_numerik):
+    sns.boxplot(y=data[var], ax=ax[i])
+    ax[i].set_title(f'Boxplot dari data {var}')
 
 plt.tight_layout()
 plt.show()
 ```
-`category` menyimpan indeks (label baris) dari DataFrame df_for_tes, yang mewakili nama kolom. `range_of_mpg` menyimpan nama-nama kolom dari df_for_tes, khususnya untuk "Duplicated Values" dan "Unique Values." `for_chart` diinisialisasi sebagai daftar kosong, yang nantinya akan menyimpan data untuk setiap kolom yang akan dipetakan.
-`colors` adalah daftar kode warna yang digunakan untuk batang dalam grafik.
+Kode tersebut diawali lagi dengan memisahkan antara kolom yang bertipe object dan angka(float/int), setelah kita `.append()` ke `kolom_numerik` kita dapat membuat dasar/tempat untuk menaruh plot yang akan kita buat dengan menggunakan `plt.subplots` dan kemudian kita kustomisasi untuk slot row kita pilih 1 row `nrows=1`, slot columns 5 karena kolom yang ingin kita box plot berjumlah 5 `ncols=5`, dan `figsize=(15,8)` untuk membuat chartnya berukuran 15*8
 
-Sebuah loop bersarang mengisi `for_chart` dengan nilai dari setiap kolom `df_for_tes`, sehingga memudahkan untuk memplotnya bersama-sama.
+Setelah kita membuat subplots kita akan membuat box plotnya. Kita akan menggunakan looping untuk melakukannya secara bersamaan
 
-`width_bar` didefinisikan untuk mengontrol lebar setiap batang dalam grafik.
-`index` dibuat menggunakan `np.arange(len(category))` untuk menghasilkan array indeks berdasarkan jumlah kategori (panjang category).
+- `for i, var in enumerate(kolom_numerik):` kode ini digunakan untuk memanggil setiap nilai dan setiap index dari nilai yang dipanggil contoh: `0 MPG` 0 sebagai i dan MPG sebagai var
+- `sns.boxplot(y=data[var], ax=ax[i])` kode yang di loop ini berguna untuk membuat masing-masing box plot. `y=data[var]` digunakan untuk memasukkan data yang ingin dibuat box plot di sumbu y kita bisa menggunakan `x=data[var` tetapi nantinya hasil dari box plot akan menjadi horizontal, lalu fungsi dari `ax=ax[i]` digunakan untuk menempatkan boxplot yang telah dibuat di axis sublot yang kita buat diatas
+- `ax[i].set_title(f'Boxplot dari data {var}')` kode ini digunakan untuk memberikan judul dari setiap boxplot yang kita buat dengan nama kolom yang sesuai
 
-Sebuah figura dan sumbu dibuat menggunakan `plt.subplots()` dengan ukuran yang ditentukan sebesar 12 kali 8 inci.
-Loop lain iterasi melalui `range_of_mpg`, menambahkan batang untuk setiap dataset (nilai duplikat dan unik) menggunakan `ax.bar()`. `index + i * width_bar` menggeser setiap set batang agar tidak tumpang tindih.
+![image](https://github.com/user-attachments/assets/b4b640cd-6952-45e1-8442-ac58776996ae)
 
-Sumbu diberi label, dan judul ditetapkan menggunakan `ax.set()`. X-ticks diposisikan untuk memusatkan batang yang dikelompokkan dan diberi label dengan kategori.
-Sebuah legenda ditambahkan untuk membedakan antara "Duplicated Values" dan "Unique Values." 
-`plt.tight_layout()` dipanggil untuk menyesuaikan jarak grafik agar lebih mudah dibaca.
+## 3 Lakukan Uji Korelasi
+Uji Korelasi akan menggunakan metode pearson yang sudah tersedia di scipy
 
-![image](https://github.com/user-attachments/assets/3383eb0a-d031-4e78-b4d4-74fb57e21ef0)
-
-## 5. Menemukan Null Values
-Kita telah menemukan Null Values di soal nomor 3 tadi
+### Membuat fungsi untuk rentang korelasi (opsional)
 ```py
-colomnya=data.columns.to_list()
-for y in colomnya:
-    print(fDari kolom {y} nilai duplikatnya,(data[y].duplicated().sum()))
-    print(fDari kolom {y} nilai NaN nya,(data[y].isnull().sum()))
-    print(fDari kolom {y} nilai uniquenya,(len(data[y].unique())))
-    print(fDari kolom {y} tipe nilai nya,(data[y].dtypes),\n)
+def rentang_korelasi(pearman):
+    pearman=pearman[0]
+    if 0.9 <= pearman <= 1.0:
+        return 'Korelasi Positif Sangat kuat'
+    elif -1.0 <= pearman <= -0.9:
+        return 'Korelasi Negatif Sangat kuat'
+    elif 0.7 <= pearman < 0.9:
+        return 'Korelasi Positif kuat'
+    elif -0.9 <= pearman < -0.7:
+        return 'Korelasi Negatif kuat'
+    elif 0.4 <= pearman < 0.7:
+        return 'Korelasi Positif sedang'
+    elif -0.7 <= pearman < -0.4:
+        return 'Korelasi Negatif sedang'
+    elif 0.1 <= pearman < 0.4:
+        return "Korelasi Positif lemah"
+    elif -0.4 <= pearman < -0.1:
+        return 'Korelasi Negatif lemah'
+    else:
+        return 'Tidak ada korelasi'
 ```
-Disini saya menggabungkan mencari total nilai unik, mencari total duplikat, dan mencari total NaN. Menggunakan `data[y].isnull().sum())` untuk mencari nilai NaN, dengan menggunakan looping saya dapat melakukan beberapa hal sekaligus.
+Kode tersebut adalah fungsi yang digunakan untuk menentukan rentang korelasi dan angka untuk percabangan di kode tersebut saya dapatkan dari berselancar di internet
 
-![image](https://github.com/user-attachments/assets/70cae662-2bec-4756-9ac8-cab32c4be581)
-
-## 6. Mengganti Null Values
-Karena tidak ada nilai NaN di data saya maka lanjut ke pertanyaan selanjutnya
-
-## 7. Mengetahui jenis data dari dataset untuk mempermudah proses
+### Uji Korelasi
 ```py
-data.info()
+hasil1=pearsonr(x=data['Horsepower'],y=data['Displacement'])
+print(f"""Korelasi dari kolom horsepower dan displacement (pergerakan yang telah dilalui mobil) adalah
+{rentang_korelasi(hasil1)}\n""")
+
+hasil2=pearsonr(x=data['MPG'],y=data['Weight'])
+print(f"""Korelasi dari kolom mpg (miles per galons) dan weight adalah
+{rentang_korelasi(hasil2)}""")
 ```
-Setelah anda run kode tersebut akan keluar informasi dari dataframe yang kita read, termasuk tipe value dari masing-masing kolom.
+Kode diatas adalah uji korelasi menggunakan `pearsonr()` kemudian hasil dari uji dari kolom horsepower dan displacement disimpan di `hasil1` lalu akan di masukkan ke fungsi, begitupun dengan perbandingan kolom MPG dengan weight
 
-![image](https://github.com/user-attachments/assets/0889156f-9d51-424e-ab38-4141ff8d59bc)
+![image](https://github.com/user-attachments/assets/60ae1289-144f-4fd5-b73e-b53954142846)
 
-## 8. Memfilter Data
-```py
-data_japan=data[data['Origin']=='Japan']
-data_japan.reset_index(drop=True,inplace=True)
-display(data_japan.head())
-
-data_us=data[data['Origin']=='US']
-data_us.reset_index(drop=True,inplace=True)
-display(data_us.head())
-
-data_europe=data[data['Origin']=='Europe']
-data_europe.reset_index(drop=True,inplace=True)
-display(data_europe.head())
-```
-Kita melakukan filtering dengan menggunakan `data[data['Origin']=='Japan']` yang akan menampilkan hanya nilai di `data['Origin']` yang berisi `Japan`, dan begitupun untuk 2 Origin yang lainnya
-
-![image](https://github.com/user-attachments/assets/01c87a11-d5c1-4006-9f98-33f5b27a2764)
-
-## 9. Membuat Box Plot
-```py
-plt.figure(figsize=(10, 6))
-plt.boxplot(data['MPG'], vert=False)
-plt.title('Box Plot of MPG')
-plt.xlabel('MPG')
-plt.grid()
-plt.show()
-```
-`plt.figure()` untuk membuat plot kosong dan `figsize=(10, 6)` untuk mengubah ukuran plot menjadi 10*6. `plt.boxplot(data['MPG'], vert=False)` untuk membuat box plot horizontal dengan value dari `data['MPG
-']`
-
-![image](https://github.com/user-attachments/assets/53fc7235-9bbb-4bec-ab93-e584e33d9e88)
-
-
-## 10. Korelasi
-```py
-plt.figure(figsize=(12, 8))
-corr_matrix = data.select_dtypes("number").corr()
-sns.heatmap(corr_matrix, annot=True, cmap="coolwarm")
-plt.title("Heatmap of Correlation Matrix")
-plt.show()
-```
-`plt.figure()` untuk membuat plot kosong dan `figsize=(12, 8)` untuk mengubah ukuran plot menjadi 12*8. `corr_matrix = data.select_dtypes("number").corr()` `data.select_dtypes("number")` Memilih kolom-kolom dalam DataFrame data yang memiliki tipe data numerik (misalnya, integer atau float). Ini penting karena hanya variabel numerik yang dapat dihitung korelasinya. `.corr()` Menghitung matriks korelasi untuk kolom-kolom numerik yang dipilih. Matriks korelasi menunjukkan hubungan linier antara setiap pasangan variabel numerik, dengan nilai berkisar antara -1 (korelasi negatif sempurna) hingga 1 (korelasi positif sempurna).
-
-`sns.heatmap(corr_matrix, ...)` Menggunakan fungsi heatmap dari pustaka Seaborn untuk menggambar heatmap berdasarkan matriks korelasi yang telah dihitung. `annot=True` Menambahkan anotasi (nilai korelasi) ke setiap sel di heatmap. Ini membuatnya lebih mudah untuk membaca nilai korelasi langsung dari grafik. `cmap="coolwarm"` Menentukan skema warna untuk heatmap. coolwarm memberikan gradien warna dari biru (korelasi negatif) ke merah (korelasi positif), membantu visualisasi hubungan antara variabel.
-
-![image](https://github.com/user-attachments/assets/91be76af-534e-43b0-b7b3-f1eb6245c1df)
+> Disini saya baru tahu jika hasil dari pearsonr() adalah sebuah list jadi saya memanfaatkan pearsonr()[0] untuk menjalankan fungsi tersebut :D
