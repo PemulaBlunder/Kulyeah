@@ -1,0 +1,1705 @@
+[
+    {
+        "name": "Nully",
+        "parent_skills": []
+    },
+    {
+        "name": "Charge",
+        "parent_skills": [
+            "Nully"
+        ]
+    },
+    {
+        "name": "Sword Mastery",
+        "parent_skills": [
+            "Charge"
+        ]
+    },
+    {
+        "name": "Shield Wall",
+        "parent_skills": [
+            "Sword Mastery"
+        ]
+    },
+    {
+        "name": "Battle Cry",
+        "parent_skills": [
+            "Charge"
+        ]
+    },
+    {
+        "name": "Defensive Stance",
+        "parent_skills": [
+            "Shield Wall",
+            "Battle Cry"
+        ]
+    },
+    {
+        "name": "Power Strike",
+        "parent_skills": [
+            "Sword Mastery"
+        ]
+    },
+    {
+        "name": "Enrage",
+        "parent_skills": [
+            "Power Strike"
+        ]
+    },
+    {
+        "name": "Shield Bash",
+        "parent_skills": [
+            "Shield Wall"
+        ]
+    },
+    {
+        "name": "Cleave",
+        "parent_skills": [
+            "Power Strike"
+        ]
+    },
+    {
+        "name": "Berserk",
+        "parent_skills": [
+            "Enrage"
+        ]
+    },
+    {
+        "name": "Warcry",
+        "parent_skills": [
+            "Battle Cry"
+        ]
+    },
+    {
+        "name": "Iron Fist",
+        "parent_skills": [
+            "Cleave"
+        ]
+    },
+    {
+        "name": "Earthquake",
+        "parent_skills": [
+            "Shield Bash"
+        ]
+    },
+    {
+        "name": "Whirlwind",
+        "parent_skills": [
+            "Cleave"
+        ]
+    },
+    {
+        "name": "Reckless Charge",
+        "parent_skills": [
+            "Berserk"
+        ]
+    },
+    {
+        "name": "Unbreakable",
+        "parent_skills": [
+            "Iron Fist"
+        ]
+    },
+    {
+        "name": "Fury Blast",
+        "parent_skills": [
+            "Warcry"
+        ]
+    },
+    {
+        "name": "Thunder Strike",
+        "parent_skills": [
+            "Earthquake"
+        ]
+    },
+    {
+        "name": "Spin Attack",
+        "parent_skills": [
+            "Whirlwind"
+        ]
+    },
+    {
+        "name": "Berserker Rage",
+        "parent_skills": [
+            "Reckless Charge"
+        ]
+    },
+    {
+        "name": "Indomitable",
+        "parent_skills": [
+            "Unbreakable"
+        ]
+    },
+    {
+        "name": "Rage of the Warrior",
+        "parent_skills": [
+            "Fury Blast"
+        ]
+    },
+    {
+        "name": "Devastating Strike",
+        "parent_skills": [
+            "Thunder Strike"
+        ]
+    },
+    {
+        "name": "Whirlwind Mastery",
+        "parent_skills": [
+            "Spin Attack"
+        ]
+    },
+    {
+        "name": "Unleash Fury",
+        "parent_skills": [
+            "Berserker Rage"
+        ]
+    },
+    {
+        "name": "Fortitude",
+        "parent_skills": [
+            "Indomitable"
+        ]
+    },
+    {
+        "name": "Battle Lord",
+        "parent_skills": [
+            "Rage of the Warrior"
+        ]
+    },
+    {
+        "name": "Colossus Smash",
+        "parent_skills": [
+            "Devastating Strike"
+        ]
+    },
+    {
+        "name": "Whirlwind Legend",
+        "parent_skills": [
+            "Whirlwind Mastery"
+        ]
+    },
+    {
+        "name": "Blood Fury",
+        "parent_skills": [
+            "Unleash Fury"
+        ]
+    },
+    {
+        "name": "Immovable",
+        "parent_skills": [
+            "Fortitude"
+        ]
+    },
+    {
+        "name": "Warrior King",
+        "parent_skills": [
+            "Battle Lord"
+        ]
+    },
+    {
+        "name": "Divine Strike",
+        "parent_skills": [
+            "Colossus Smash",
+            "Warrior King"
+        ]
+    },
+    {
+        "name": "Tempest Fury",
+        "parent_skills": [
+            "Whirlwind Mastery",
+            "Blood Fury"
+        ]
+    },
+    {
+        "name": "Ground Breaker",
+        "parent_skills": [
+            "Colossus Smash"
+        ]
+    },
+    {
+        "name": "Whirlwind King",
+        "parent_skills": [
+            "Whirlwind Legend"
+        ]
+    },
+    {
+        "name": "Fury of the Warrior",
+        "parent_skills": [
+            "Blood Fury"
+        ]
+    },
+    {
+        "name": "The Unyielding",
+        "parent_skills": [
+            "Immovable"
+        ]
+    },
+    {
+        "name": "Imperial Warrior",
+        "parent_skills": [
+            "Warrior King"
+        ]
+    },
+    {
+        "name": "Earthshaker",
+        "parent_skills": [
+            "Ground Breaker"
+        ]
+    },
+    {
+        "name": "Whirlwind Master",
+        "parent_skills": [
+            "Whirlwind King"
+        ]
+    },
+    {
+        "name": "Berserker Ascendant",
+        "parent_skills": [
+            "Fury of the Warrior"
+        ]
+    },
+    {
+        "name": "Iron Will",
+        "parent_skills": [
+            "The Unyielding"
+        ]
+    },
+    {
+        "name": "Emperor of War",
+        "parent_skills": [
+            "Imperial Warrior"
+        ]
+    },
+    {
+        "name": "Eternal Warrior",
+        "parent_skills": [
+            "Ground Breaker",
+            "Berserker Ascendant"
+        ]
+    },
+    {
+        "name": "Invincible Force",
+        "parent_skills": [
+            "Whirlwind King",
+            "Iron Will"
+        ]
+    },
+    {
+        "name": "Titanic Impact",
+        "parent_skills": [
+            "Earthshaker",
+            "Emperor of War"
+        ]
+    },
+    {
+        "name": "Fury of the Gods",
+        "parent_skills": [
+            "Berserker Ascendant",
+            "Whirlwind Master"
+        ]
+    },
+    {
+        "name": "The Titan",
+        "parent_skills": [
+            "Earthshaker"
+        ]
+    },
+    {
+        "name": "Whirlwind Legendary",
+        "parent_skills": [
+            "Whirlwind Master"
+        ]
+    },
+    {
+        "name": "Rage of the God",
+        "parent_skills": [
+            "Berserker Ascendant"
+        ]
+    },
+    {
+        "name": "Unstoppable Force",
+        "parent_skills": [
+            "Iron Will"
+        ]
+    },
+    {
+        "name": "War God",
+        "parent_skills": [
+            "Emperor of War"
+        ]
+    },
+    {
+        "name": "Supreme Warrior",
+        "parent_skills": [
+            "The Titan"
+        ]
+    },
+    {
+        "name": "Whirlwind God",
+        "parent_skills": [
+            "Whirlwind Legendary"
+        ]
+    },
+    {
+        "name": "Apocalypse Fury",
+        "parent_skills": [
+            "Rage of the God"
+        ]
+    },
+    {
+        "name": "Divine Guardian",
+        "parent_skills": [
+            "Unstoppable Force"
+        ]
+    },
+    {
+        "name": "Sovereign of Battle",
+        "parent_skills": [
+            "War God"
+        ]
+    },
+    {
+        "name": "Fireball",
+        "parent_skills": [
+            "Nully"
+        ]
+    },
+    {
+        "name": "Frostbolt",
+        "parent_skills": [
+            "Fireball"
+        ]
+    },
+    {
+        "name": "Arcane Missile",
+        "parent_skills": [
+            "Frostbolt"
+        ]
+    },
+    {
+        "name": "Mana Shield",
+        "parent_skills": [
+            "Arcane Missile"
+        ]
+    },
+    {
+        "name": "Flame Wave",
+        "parent_skills": [
+            "Arcane Missile"
+        ]
+    },
+    {
+        "name": "Blink",
+        "parent_skills": [
+            "Mana Shield"
+        ]
+    },
+    {
+        "name": "Frost Armor",
+        "parent_skills": [
+            "Frostbolt"
+        ]
+    },
+    {
+        "name": "Firestorm",
+        "parent_skills": [
+            "Flame Wave"
+        ]
+    },
+    {
+        "name": "Ice Barrier",
+        "parent_skills": [
+            "Frost Armor"
+        ]
+    },
+    {
+        "name": "Arcane Blast",
+        "parent_skills": [
+            "Arcane Missile"
+        ]
+    },
+    {
+        "name": "Arcane Armor",
+        "parent_skills": [
+            "Mana Shield"
+        ]
+    },
+    {
+        "name": "Pyroclasm",
+        "parent_skills": [
+            "Firestorm"
+        ]
+    },
+    {
+        "name": "Deep Freeze",
+        "parent_skills": [
+            "Ice Barrier"
+        ]
+    },
+    {
+        "name": "Meteor Shower",
+        "parent_skills": [
+            "Firestorm"
+        ]
+    },
+    {
+        "name": "Frost Nova",
+        "parent_skills": [
+            "Deep Freeze"
+        ]
+    },
+    {
+        "name": "Arcane Explosion",
+        "parent_skills": [
+            "Arcane Blast"
+        ]
+    },
+    {
+        "name": "Blizzard",
+        "parent_skills": [
+            "Frost Nova"
+        ]
+    },
+    {
+        "name": "Time Bender",
+        "parent_skills": [
+            "Arcane Armor"
+        ]
+    },
+    {
+        "name": "Illusion",
+        "parent_skills": [
+            "Arcane Armor"
+        ]
+    },
+    {
+        "name": "Summon Elemental",
+        "parent_skills": [
+            "Meteor Shower"
+        ]
+    },
+    {
+        "name": "Arcane Fury",
+        "parent_skills": [
+            "Arcane Explosion"
+        ]
+    },
+    {
+        "name": "Inferno",
+        "parent_skills": [
+            "Pyroclasm"
+        ]
+    },
+    {
+        "name": "Frostbite",
+        "parent_skills": [
+            "Frost Nova"
+        ]
+    },
+    {
+        "name": "Chronomancy",
+        "parent_skills": [
+            "Time Bender"
+        ]
+    },
+    {
+        "name": "Mirror Image",
+        "parent_skills": [
+            "Illusion"
+        ]
+    },
+    {
+        "name": "Summon Ancient",
+        "parent_skills": [
+            "Summon Elemental"
+        ]
+    },
+    {
+        "name": "Mana Regen",
+        "parent_skills": [
+            "Arcane Fury"
+        ]
+    },
+    {
+        "name": "Apocalyptic Flame",
+        "parent_skills": [
+            "Inferno"
+        ]
+    },
+    {
+        "name": "Frost Lord",
+        "parent_skills": [
+            "Frostbite"
+        ]
+    },
+    {
+        "name": "Temporal Rift",
+        "parent_skills": [
+            "Chronomancy"
+        ]
+    },
+    {
+        "name": "Ethereal Form",
+        "parent_skills": [
+            "Mirror Image"
+        ]
+    },
+    {
+        "name": "Elemental Ascension",
+        "parent_skills": [
+            "Summon Ancient"
+        ]
+    },
+    {
+        "name": "Mana Void",
+        "parent_skills": [
+            "Mana Regen"
+        ]
+    },
+    {
+        "name": "Supernova",
+        "parent_skills": [
+            "Apocalyptic Flame"
+        ]
+    },
+    {
+        "name": "Ice King",
+        "parent_skills": [
+            "Frost Lord"
+        ]
+    },
+    {
+        "name": "Time Distortion",
+        "parent_skills": [
+            "Temporal Rift"
+        ]
+    },
+    {
+        "name": "Phase Shift",
+        "parent_skills": [
+            "Ethereal Form"
+        ]
+    },
+    {
+        "name": "World Breaker",
+        "parent_skills": [
+            "Elemental Ascension"
+        ]
+    },
+    {
+        "name": "Arcane Well",
+        "parent_skills": [
+            "Mana Void"
+        ]
+    },
+    {
+        "name": "Galactic Flame",
+        "parent_skills": [
+            "Supernova"
+        ]
+    },
+    {
+        "name": "Eternal Frost",
+        "parent_skills": [
+            "Ice King"
+        ]
+    },
+    {
+        "name": "Chrono Mastery",
+        "parent_skills": [
+            "Time Distortion"
+        ]
+    },
+    {
+        "name": "Spectral Vanish",
+        "parent_skills": [
+            "Phase Shift"
+        ]
+    },
+    {
+        "name": "Elemental Overlord",
+        "parent_skills": [
+            "World Breaker"
+        ]
+    },
+    {
+        "name": "Arcane Abyss",
+        "parent_skills": [
+            "Arcane Well"
+        ]
+    },
+    {
+        "name": "Cosmic Conflagration",
+        "parent_skills": [
+            "Galactic Flame"
+        ]
+    },
+    {
+        "name": "Frozen Immortal",
+        "parent_skills": [
+            "Eternal Frost"
+        ]
+    },
+    {
+        "name": "Time Bend",
+        "parent_skills": [
+            "Chrono Mastery"
+        ]
+    },
+    {
+        "name": "Ghostly Veil",
+        "parent_skills": [
+            "Spectral Vanish"
+        ]
+    },
+    {
+        "name": "Apocalypse Mage",
+        "parent_skills": [
+            "Elemental Overlord"
+        ]
+    },
+    {
+        "name": "Arcane Paradox",
+        "parent_skills": [
+            "Arcane Abyss"
+        ]
+    },
+    {
+        "name": "Stellar Eruption",
+        "parent_skills": [
+            "Cosmic Conflagration"
+        ]
+    },
+    {
+        "name": "Immortal Ice",
+        "parent_skills": [
+            "Frozen Immortal"
+        ]
+    },
+    {
+        "name": "Chronomancer",
+        "parent_skills": [
+            "Time Bend"
+        ]
+    },
+    {
+        "name": "Phantom Form",
+        "parent_skills": [
+            "Ghostly Veil"
+        ]
+    },
+    {
+        "name": "Supreme Wizard",
+        "parent_skills": [
+            "Apocalypse Mage"
+        ]
+    },
+    {
+        "name": "Arcane Empire",
+        "parent_skills": [
+            "Arcane Paradox"
+        ]
+    },
+    {
+        "name": "Celestial Flare",
+        "parent_skills": [
+            "Stellar Eruption"
+        ]
+    },
+    {
+        "name": "Frost of Eternity",
+        "parent_skills": [
+            "Immortal Ice"
+        ]
+    },
+    {
+        "name": "Time Bender Mastery",
+        "parent_skills": [
+            "Chronomancer"
+        ]
+    },
+    {
+        "name": "Spectral King",
+        "parent_skills": [
+            "Phantom Form"
+        ]
+    },
+    {
+        "name": "Stealth",
+        "parent_skills": [
+            "Nully"
+        ]
+    },
+    {
+        "name": "Backstab",
+        "parent_skills": [
+            "Stealth"
+        ]
+    },
+    {
+        "name": "Quick Attack",
+        "parent_skills": [
+            "Backstab"
+        ]
+    },
+    {
+        "name": "Poison Dagger",
+        "parent_skills": [
+            "Quick Attack"
+        ]
+    },
+    {
+        "name": "Shadow Step",
+        "parent_skills": [
+            "Poison Dagger"
+        ]
+    },
+    {
+        "name": "Evasion",
+        "parent_skills": [
+            "Shadow Step"
+        ]
+    },
+    {
+        "name": "Dual Wield",
+        "parent_skills": [
+            "Quick Attack"
+        ]
+    },
+    {
+        "name": "Trap Mastery",
+        "parent_skills": [
+            "Shadow Step"
+        ]
+    },
+    {
+        "name": "Ambush",
+        "parent_skills": [
+            "Backstab"
+        ]
+    },
+    {
+        "name": "Shadow Strike",
+        "parent_skills": [
+            "Poison Dagger"
+        ]
+    },
+    {
+        "name": "Venomous Blade",
+        "parent_skills": [
+            "Poison Dagger"
+        ]
+    },
+    {
+        "name": "Silent Kill",
+        "parent_skills": [
+            "Ambush"
+        ]
+    },
+    {
+        "name": "Throwing Daggers",
+        "parent_skills": [
+            "Dual Wield"
+        ]
+    },
+    {
+        "name": "Smoke Bomb",
+        "parent_skills": [
+            "Shadow Strike"
+        ]
+    },
+    {
+        "name": "Deadly Precision",
+        "parent_skills": [
+            "Throwing Daggers"
+        ]
+    },
+    {
+        "name": "Crippling Poison",
+        "parent_skills": [
+            "Venomous Blade"
+        ]
+    },
+    {
+        "name": "Shadow Clone",
+        "parent_skills": [
+            "Shadow Step"
+        ]
+    },
+    {
+        "name": "Shadow Assault",
+        "parent_skills": [
+            "Silent Kill"
+        ]
+    },
+    {
+        "name": "Piercing Strike",
+        "parent_skills": [
+            "Deadly Precision"
+        ]
+    },
+    {
+        "name": "Triple Threat",
+        "parent_skills": [
+            "Throwing Daggers"
+        ]
+    },
+    {
+        "name": "Crippling Strike",
+        "parent_skills": [
+            "Shadow Assault"
+        ]
+    },
+    {
+        "name": "Decoy",
+        "parent_skills": [
+            "Shadow Clone"
+        ]
+    },
+    {
+        "name": "Toxic Blast",
+        "parent_skills": [
+            "Crippling Poison"
+        ]
+    },
+    {
+        "name": "Shadow Veil",
+        "parent_skills": [
+            "Shadow Clone"
+        ]
+    },
+    {
+        "name": "Master of Shadows",
+        "parent_skills": [
+            "Shadow Veil"
+        ]
+    },
+    {
+        "name": "Dancing Blade",
+        "parent_skills": [
+            "Shadow Assault"
+        ]
+    },
+    {
+        "name": "Backstab Mastery",
+        "parent_skills": [
+            "Piercing Strike"
+        ]
+    },
+    {
+        "name": "Assassin Strike",
+        "parent_skills": [
+            "Shadow Strike"
+        ]
+    },
+    {
+        "name": "Night Vision",
+        "parent_skills": [
+            "Shadow Veil"
+        ]
+    },
+    {
+        "name": "Dagger Rain",
+        "parent_skills": [
+            "Throwing Daggers"
+        ]
+    },
+    {
+        "name": "Crippling Mastery",
+        "parent_skills": [
+            "Crippling Strike"
+        ]
+    },
+    {
+        "name": "Fatal Poison",
+        "parent_skills": [
+            "Toxic Blast"
+        ]
+    },
+    {
+        "name": "Silent Footsteps",
+        "parent_skills": [
+            "Master of Shadows"
+        ]
+    },
+    {
+        "name": "Shadow Sense",
+        "parent_skills": [
+            "Night Vision"
+        ]
+    },
+    {
+        "name": "Triple Backstab",
+        "parent_skills": [
+            "Backstab Mastery"
+        ]
+    },
+    {
+        "name": "Assassin Ambush",
+        "parent_skills": [
+            "Assassin Strike"
+        ]
+    },
+    {
+        "name": "Lethal Venom",
+        "parent_skills": [
+            "Fatal Poison"
+        ]
+    },
+    {
+        "name": "Stealth Mastery",
+        "parent_skills": [
+            "Silent Footsteps"
+        ]
+    },
+    {
+        "name": "Rain of Venom",
+        "parent_skills": [
+            "Dagger Rain"
+        ]
+    },
+    {
+        "name": "Eviscerate",
+        "parent_skills": [
+            "Backstab Mastery"
+        ]
+    },
+    {
+        "name": "Shadow Dance",
+        "parent_skills": [
+            "Silent Footsteps"
+        ]
+    },
+    {
+        "name": "Phantom Blade",
+        "parent_skills": [
+            "Shadow Sense"
+        ]
+    },
+    {
+        "name": "Dark Assault",
+        "parent_skills": [
+            "Triple Backstab"
+        ]
+    },
+    {
+        "name": "Murderous Strike",
+        "parent_skills": [
+            "Assassin Ambush"
+        ]
+    },
+    {
+        "name": "Death Strike",
+        "parent_skills": [
+            "Eviscerate"
+        ]
+    },
+    {
+        "name": "Shadow Barrage",
+        "parent_skills": [
+            "Dagger Rain"
+        ]
+    },
+    {
+        "name": "Serpent Bite",
+        "parent_skills": [
+            "Lethal Venom"
+        ]
+    },
+    {
+        "name": "Shadow Blade Master",
+        "parent_skills": [
+            "Phantom Blade"
+        ]
+    },
+    {
+        "name": "Venomous Mastery",
+        "parent_skills": [
+            "Serpent Bite"
+        ]
+    },
+    {
+        "name": "Vampiric Strike",
+        "parent_skills": [
+            "Death Strike"
+        ]
+    },
+    {
+        "name": "Shadow Overload",
+        "parent_skills": [
+            "Dark Assault"
+        ]
+    },
+    {
+        "name": "Assassin King",
+        "parent_skills": [
+            "Shadow Barrage"
+        ]
+    },
+    {
+        "name": "Spectral Assault",
+        "parent_skills": [
+            "Shadow Dance"
+        ]
+    },
+    {
+        "name": "Shadow Mastery",
+        "parent_skills": [
+            "Shadow Blade Master"
+        ]
+    },
+    {
+        "name": "Venomous Assault",
+        "parent_skills": [
+            "Venomous Mastery"
+        ]
+    },
+    {
+        "name": "Nocturnal Strike",
+        "parent_skills": [
+            "Vampiric Strike"
+        ]
+    },
+    {
+        "name": "Assassin's Vengeance",
+        "parent_skills": [
+            "Assassin King"
+        ]
+    },
+    {
+        "name": "Phantom Revenge",
+        "parent_skills": [
+            "Spectral Assault"
+        ]
+    },
+    {
+        "name": "Deadly Ambush",
+        "parent_skills": [
+            "Nocturnal Strike"
+        ]
+    },
+    {
+        "name": "Shadow Storm",
+        "parent_skills": [
+            "Shadow Mastery"
+        ]
+    },
+    {
+        "name": "Assassin's Shadow",
+        "parent_skills": [
+            "Venomous Assault"
+        ]
+    },
+    {
+        "name": "Supreme Rogue",
+        "parent_skills": [
+            "Deadly Ambush"
+        ]
+    },
+    {
+        "name": "King of Shadows",
+        "parent_skills": [
+            "Shadow Storm"
+        ]
+    },
+    {
+        "name": "Shadow Lord",
+        "parent_skills": [
+            "Assassin's Shadow"
+        ]
+    },
+    {
+        "name": "Rapid Shot",
+        "parent_skills": [
+            "Nully"
+        ]
+    },
+    {
+        "name": "Steady Aim",
+        "parent_skills": [
+            "Rapid Shot"
+        ]
+    },
+    {
+        "name": "Piercing Arrow",
+        "parent_skills": [
+            "Steady Aim"
+        ]
+    },
+    {
+        "name": "Camouflage",
+        "parent_skills": [
+            "Piercing Arrow"
+        ]
+    },
+    {
+        "name": "Eagle Eye",
+        "parent_skills": [
+            "Camouflage"
+        ]
+    },
+    {
+        "name": "Trap Master",
+        "parent_skills": [
+            "Camouflage"
+        ]
+    },
+    {
+        "name": "Flurry of Arrows",
+        "parent_skills": [
+            "Rapid Shot"
+        ]
+    },
+    {
+        "name": "Explosive Traps",
+        "parent_skills": [
+            "Trap Master"
+        ]
+    },
+    {
+        "name": "Multi-Shot",
+        "parent_skills": [
+            "Flurry of Arrows"
+        ]
+    },
+    {
+        "name": "Shadow Step",
+        "parent_skills": [
+            "Camouflage"
+        ]
+    },
+    {
+        "name": "Piercing Shot",
+        "parent_skills": [
+            "Piercing Arrow"
+        ]
+    },
+    {
+        "name": "Deadly Traps",
+        "parent_skills": [
+            "Explosive Traps"
+        ]
+    },
+    {
+        "name": "Hunter's Reflex",
+        "parent_skills": [
+            "Flurry of Arrows"
+        ]
+    },
+    {
+        "name": "Aimed Shot",
+        "parent_skills": [
+            "Steady Aim"
+        ]
+    },
+    {
+        "name": "Rain of Arrows",
+        "parent_skills": [
+            "Multi-Shot"
+        ]
+    },
+    {
+        "name": "Cloak of Invisibility",
+        "parent_skills": [
+            "Shadow Step"
+        ]
+    },
+    {
+        "name": "Triple Shot",
+        "parent_skills": [
+            "Aimed Shot"
+        ]
+    },
+    {
+        "name": "Snare Trap",
+        "parent_skills": [
+            "Deadly Traps"
+        ]
+    },
+    {
+        "name": "Mark of the Hunter",
+        "parent_skills": [
+            "Rain of Arrows"
+        ]
+    },
+    {
+        "name": "Explosive Arrow",
+        "parent_skills": [
+            "Triple Shot"
+        ]
+    },
+    {
+        "name": "Shadow Hunter",
+        "parent_skills": [
+            "Cloak of Invisibility"
+        ]
+    },
+    {
+        "name": "Poison Traps",
+        "parent_skills": [
+            "Snare Trap"
+        ]
+    },
+    {
+        "name": "Ultimate Aim",
+        "parent_skills": [
+            "Aimed Shot"
+        ]
+    },
+    {
+        "name": "Lightning Traps",
+        "parent_skills": [
+            "Poison Traps"
+        ]
+    },
+    {
+        "name": "Double Arrow",
+        "parent_skills": [
+            "Explosive Arrow"
+        ]
+    },
+    {
+        "name": "Shadow Assault",
+        "parent_skills": [
+            "Shadow Hunter"
+        ]
+    },
+    {
+        "name": "Hail of Arrows",
+        "parent_skills": [
+            "Rain of Arrows"
+        ]
+    },
+    {
+        "name": "Silent Kill",
+        "parent_skills": [
+            "Shadow Assault"
+        ]
+    },
+    {
+        "name": "Venomous Traps",
+        "parent_skills": [
+            "Lightning Traps"
+        ]
+    },
+    {
+        "name": "Hunter's Mark",
+        "parent_skills": [
+            "Ultimate Aim"
+        ]
+    },
+    {
+        "name": "Archer Mastery",
+        "parent_skills": [
+            "Hail of Arrows"
+        ]
+    },
+    {
+        "name": "Assassination Strike",
+        "parent_skills": [
+            "Silent Kill"
+        ]
+    },
+    {
+        "name": "Toxic Traps",
+        "parent_skills": [
+            "Venomous Traps"
+        ]
+    },
+    {
+        "name": "Perfect Aim",
+        "parent_skills": [
+            "Hunter's Mark"
+        ]
+    },
+    {
+        "name": "Storm of Arrows",
+        "parent_skills": [
+            "Archer Mastery"
+        ]
+    },
+    {
+        "name": "Phantom Strike",
+        "parent_skills": [
+            "Assassination Strike"
+        ]
+    },
+    {
+        "name": "Death Traps",
+        "parent_skills": [
+            "Toxic Traps"
+        ]
+    },
+    {
+        "name": "Unerring Shot",
+        "parent_skills": [
+            "Perfect Aim"
+        ]
+    },
+    {
+        "name": "Archer Legend",
+        "parent_skills": [
+            "Storm of Arrows"
+        ]
+    },
+    {
+        "name": "Shadow King",
+        "parent_skills": [
+            "Phantom Strike"
+        ]
+    },
+    {
+        "name": "Ultimate Traps",
+        "parent_skills": [
+            "Death Traps"
+        ]
+    },
+    {
+        "name": "Deadly Precision",
+        "parent_skills": [
+            "Unerring Shot"
+        ]
+    },
+    {
+        "name": "Healing Touch",
+        "parent_skills": [
+            "Nully"
+        ]
+    },
+    {
+        "name": "Mana Bond",
+        "parent_skills": [
+            "Healing Touch"
+        ]
+    },
+    {
+        "name": "Aura of Life",
+        "parent_skills": [
+            "Mana Bond"
+        ]
+    },
+    {
+        "name": "Shield Blast",
+        "parent_skills": [
+            "Aura of Life"
+        ]
+    },
+    {
+        "name": "Blessing",
+        "parent_skills": [
+            "Shield Blast"
+        ]
+    },
+    {
+        "name": "Revitalizing Touch",
+        "parent_skills": [
+            "Mana Bond"
+        ]
+    },
+    {
+        "name": "Vital Shield",
+        "parent_skills": [
+            "Aura of Life"
+        ]
+    },
+    {
+        "name": "Divine Heal",
+        "parent_skills": [
+            "Revitalizing Touch"
+        ]
+    },
+    {
+        "name": "Sacred Aura",
+        "parent_skills": [
+            "Vital Shield"
+        ]
+    },
+    {
+        "name": "Barrier of Light",
+        "parent_skills": [
+            "Shield Blast"
+        ]
+    },
+    {
+        "name": "Graceful Defense",
+        "parent_skills": [
+            "Mana Bond"
+        ]
+    },
+    {
+        "name": "Holy Light",
+        "parent_skills": [
+            "Divine Heal"
+        ]
+    },
+    {
+        "name": "Mana Surge",
+        "parent_skills": [
+            "Sacred Aura"
+        ]
+    },
+    {
+        "name": "Sacrifice",
+        "parent_skills": [
+            "Divine Heal"
+        ]
+    },
+    {
+        "name": "Aegis of Healing",
+        "parent_skills": [
+            "Sacred Aura"
+        ]
+    },
+    {
+        "name": "Mend Wounds",
+        "parent_skills": [
+            "Holy Light"
+        ]
+    },
+    {
+        "name": "Blessing of Fortitude",
+        "parent_skills": [
+            "Aegis of Healing"
+        ]
+    },
+    {
+        "name": "Light of the Ancients",
+        "parent_skills": [
+            "Mend Wounds"
+        ]
+    },
+    {
+        "name": "Serenity",
+        "parent_skills": [
+            "Blessing of Fortitude"
+        ]
+    },
+    {
+        "name": "Aura of Resurgence",
+        "parent_skills": [
+            "Sacrifice"
+        ]
+    },
+    {
+        "name": "Regenerative Shield",
+        "parent_skills": [
+            "Aegis of Healing"
+        ]
+    },
+    {
+        "name": "Wrath of Light",
+        "parent_skills": [
+            "Light of the Ancients"
+        ]
+    },
+    {
+        "name": "Perfect Heal",
+        "parent_skills": [
+            "Mend Wounds"
+        ]
+    },
+    {
+        "name": "Divine Intervention",
+        "parent_skills": [
+            "Serenity"
+        ]
+    },
+    {
+        "name": "Shield of the Angel",
+        "parent_skills": [
+            "Regenerative Shield"
+        ]
+    },
+    {
+        "name": "Empowered Blessing",
+        "parent_skills": [
+            "Aura of Resurgence"
+        ]
+    },
+    {
+        "name": "Celestial Guardian",
+        "parent_skills": [
+            "Shield of the Angel"
+        ]
+    },
+    {
+        "name": "Heavenly Rescue",
+        "parent_skills": [
+            "Divine Intervention"
+        ]
+    },
+    {
+        "name": "Aura of Radiance",
+        "parent_skills": [
+            "Empowered Blessing"
+        ]
+    },
+    {
+        "name": "Holy Restoration",
+        "parent_skills": [
+            "Celestial Guardian"
+        ]
+    },
+    {
+        "name": "Seraphic Blessing",
+        "parent_skills": [
+            "Heavenly Rescue"
+        ]
+    },
+    {
+        "name": "Grace of the Immortal",
+        "parent_skills": [
+            "Aura of Radiance"
+        ]
+    },
+    {
+        "name": "Blessed Resurrection",
+        "parent_skills": [
+            "Holy Restoration"
+        ]
+    },
+    {
+        "name": "Halo of Protection",
+        "parent_skills": [
+            "Seraphic Blessing"
+        ]
+    },
+    {
+        "name": "Eternal Heal",
+        "parent_skills": [
+            "Grace of the Immortal"
+        ]
+    },
+    {
+        "name": "Light of Divinity",
+        "parent_skills": [
+            "Blessed Resurrection"
+        ]
+    },
+    {
+        "name": "Wrath of Seraphim",
+        "parent_skills": [
+            "Halo of Protection"
+        ]
+    },
+    {
+        "name": "Final Rescue",
+        "parent_skills": [
+            "Eternal Heal"
+        ]
+    },
+    {
+        "name": "Blessing of Eternity",
+        "parent_skills": [
+            "Light of Divinity"
+        ]
+    },
+    {
+        "name": "Light of Immortality",
+        "parent_skills": [
+            "Wrath of Seraphim"
+        ]
+    },
+    {
+        "name": "Guardian of the Sacred",
+        "parent_skills": [
+            "Final Rescue"
+        ]
+    },
+    {
+        "name": "Seraphic Ascension",
+        "parent_skills": [
+            "Blessing of Eternity"
+        ]
+    },
+    {
+        "name": "Ascension of the Light",
+        "parent_skills": [
+            "Light of Immortality"
+        ]
+    },
+    {
+        "name": "Divine Awakening",
+        "parent_skills": [
+            "Guardian of the Sacred"
+        ]
+    },
+    {
+        "name": "Eternal Sanctuary",
+        "parent_skills": [
+            "Seraphic Ascension"
+        ]
+    },
+    {
+        "name": "Heavenly Dawn",
+        "parent_skills": [
+            "Ascension of the Light"
+        ]
+    },
+    {
+        "name": "Angelic Blessing",
+        "parent_skills": [
+            "Divine Awakening"
+        ]
+    },
+    {
+        "name": "Celestial Rescue",
+        "parent_skills": [
+            "Eternal Sanctuary"
+        ]
+    },
+    {
+        "name": "Light of Infinity",
+        "parent_skills": [
+            "Heavenly Dawn"
+        ]
+    },
+    {
+        "name": "Resurrection of the Immortal",
+        "parent_skills": [
+            "Angelic Blessing"
+        ]
+    },
+    {
+        "name": "Blessed Sanctification",
+        "parent_skills": [
+            "Celestial Rescue"
+        ]
+    },
+    {
+        "name": "Divine Rebirth",
+        "parent_skills": [
+            "Light of Infinity"
+        ]
+    },
+    {
+        "name": "Sanctified Ascension",
+        "parent_skills": [
+            "Resurrection of the Immortal"
+        ]
+    },
+    {
+        "name": "Heavenly Enlightenment",
+        "parent_skills": [
+            "Blessed Sanctification"
+        ]
+    },
+    {
+        "name": "Supreme Healer",
+        "parent_skills": [
+            "Divine Rebirth"
+        ]
+    },
+    {
+        "name": "Light of Eternity",
+        "parent_skills": [
+            "Sanctified Ascension"
+        ]
+    },
+    {
+        "name": "Angelic Immortality",
+        "parent_skills": [
+            "Heavenly Enlightenment"
+        ]
+    }
+]
