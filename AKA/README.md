@@ -34,7 +34,7 @@ pip install matplotlib numpy
 
 ### File
 
-- `skill_tree.py`: Script Python utama yang berisi implementasi.
+- `gamin4.ipynb`: Script Python utama yang berisi implementasi.
 - `skill_tree.json`: File JSON yang mendefinisikan struktur pohon skill.
 
 ### Contoh Struktur Pohon Skill (`skill_tree.json`)
