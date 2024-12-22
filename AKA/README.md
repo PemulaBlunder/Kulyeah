@@ -5,7 +5,7 @@ Proyek ini membandingkan metode **rekursif** dan **iteratif** untuk membuka poho
 
 ## Gambaran Umum
 
-Dalam banyak gim, pohon skill adalah struktur hierarkis di mana membuka sebuah skill bergantung pada penguasaan skill prasyarat. Proyek ini mengimplementasikan dua metode untuk menghitung dan membuka skill:
+Dalam banyak game, Skill Tree adalah struktur hierarkis di mana membuka sebuah skill bergantung pada penguasaan skill prasyarat. Proyek ini mengimplementasikan dua metode untuk menghitung dan membuka skill:
 1. **Metode Rekursif**
 2. **Metode Iteratif**
 
