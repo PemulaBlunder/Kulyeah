@@ -20,8 +20,7 @@ Proyek ini juga mengukur dan membandingkan kinerja kedua metode dengan menggunak
 
 ## Memulai
 
-### Prasyarat
-
+### Requirement
 - Python versi 3.7 atau lebih baru
 - Perpustakaan yang diperlukan:
   - `matplotlib`
@@ -30,6 +29,7 @@ Proyek ini juga mengukur dan membandingkan kinerja kedua metode dengan menggunak
 Pasang dependensi dengan perintah:
 ```bash
 pip install matplotlib numpy
+pip install matplotlib matplotlib
 ```
 
 ### File
